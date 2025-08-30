@@ -1,12 +1,14 @@
 import Fastify from "fastify";
 
+import { modules } from "./modules";
+
 const server = Fastify({
   logger: true,
 });
 
-server.get("/", async (request, reply) => {
-  return { hello: "world" };
-});
+for (const module of modules) {
+  server.register(module.web);
+}
 
 const start = async () => {
   try {
