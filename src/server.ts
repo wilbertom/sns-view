@@ -4,13 +4,17 @@ const server = Fastify({
   logger: true,
 });
 
-server.get("/", (request, reply) => {
-  reply.send({ hello: "world" });
+server.get("/", async (request, reply) => {
+  return { hello: "world" };
 });
 
-server.listen({ port: 3000 }, (err, address) => {
-  if (err) {
+const start = async () => {
+  try {
+    await server.listen({ port: 3000 });
+  } catch (err) {
     server.log.error(err);
     process.exit(1);
   }
-});
+};
+
+start();
