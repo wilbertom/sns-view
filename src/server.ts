@@ -1,6 +1,6 @@
 import Fastify from "fastify";
 
-import { modules } from "./modules";
+import { modules } from "./modules.js";
 
 const server = Fastify({
   logger: true,
