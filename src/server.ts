@@ -1,6 +1,6 @@
 import Fastify from "fastify";
 
-const server = new Fastify({
+const server = Fastify({
   logger: true,
 });
 
