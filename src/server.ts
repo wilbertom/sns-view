@@ -10,7 +10,7 @@ for (const module of modules) {
   server.register(module.web);
 }
 
-const start = async () => {
+export const start = async () => {
   try {
     await server.listen({ port: 3000 });
   } catch (err) {
@@ -18,5 +18,3 @@ const start = async () => {
     process.exit(1);
   }
 };
-
-start();
