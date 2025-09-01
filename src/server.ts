@@ -18,3 +18,7 @@ export const start = async () => {
     process.exit(1);
   }
 };
+
+if (import.meta.main) {
+  start();
+}
